@@ -4,12 +4,12 @@ const GlobalStyle = createGlobalStyle`
   html,
   body {
     height: 100%;
+    font-family: 'Open Sans', sans-serif;
     width: 100%;
     line-height: 1.5;
   }
 
   body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     background-color: '#eee'
   }
 
@@ -25,7 +25,6 @@ const GlobalStyle = createGlobalStyle`
 
   p,
   label {
-    font-family: Georgia, Times, 'Times New Roman', serif;
     line-height: 1.5em;
   }
   .card {
@@ -33,8 +32,15 @@ const GlobalStyle = createGlobalStyle`
    }
    img {
     margin: auto !important
-  
+
    }
+   .toggler.react-toggle--checked .react-toggle-track {
+     background-color: #007bff;
+     
+    }
+    .toggler {
+      vertical-align:middle
+    }
 `;
 
 export default GlobalStyle;

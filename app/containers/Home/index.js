@@ -19,6 +19,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Nav from 'react-bootstrap/Nav';
 import Alert from 'react-bootstrap/Alert';
+import Toggle from 'react-toggle';
 import {
   makeSelectImages,
   makeSelectLoading,
@@ -29,6 +30,7 @@ import reducer from './reducer';
 import saga from './saga';
 import LoadingIndicator from '../../components/LoadingIndicator';
 import { getThumbanilPath } from '../../utils/helper';
+import 'react-toggle/style.css';
 
 const key = 'home';
 
@@ -50,18 +52,31 @@ export function Home({ images, loading, error, fetchImages }) {
         <LoadingIndicator />
       ) : (
         <div>
-          <Nav className="mb-2" variant="pills" defaultActiveKey="hot"   onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}>
-          <Nav.Item>
-              <Nav.Link eventKey="hot">Hot</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link eventKey="top">Top</Nav.Link>
-            </Nav.Item>
+          <div className="clearfix">
+            <div className="float-left">
+              <Nav
+                className="mb-2"
+                variant="pills"
+                defaultActiveKey="hot"
+                onSelect={selectedKey => alert(`selected ${selectedKey}`)}
+              >
+                <Nav.Item>
+                  <Nav.Link eventKey="hot">Hot</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link eventKey="top">Top</Nav.Link>
+                </Nav.Item>
 
-            <Nav.Item>
-              <Nav.Link eventKey="user">User</Nav.Link>
-            </Nav.Item>
-          </Nav>
+                <Nav.Item>
+                  <Nav.Link eventKey="user">User</Nav.Link>
+                </Nav.Item>
+              </Nav>
+            </div>
+            <div className="float-right">
+              <label className="mr-2">Viral</label>
+              <Toggle className="toggler" defaultChecked onChange={() => {}} />
+            </div>
+          </div>
           <Row>
             {images.length === 0 ? (
               <Col xs="12">
