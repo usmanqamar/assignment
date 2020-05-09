@@ -3,13 +3,11 @@ import request from 'utils/request';
 import { FETCH_IMAGES } from './constants';
 import { API_BASE } from '../../utils/constants';
 import { imagesLoaded, imagesLoadingError } from './actions';
-// import { makeSelectUsername } from 'containers/Home/selectors';
 
-/**
- * Github repos request/response handler
- */
-export function* getImages({ section, sort, page }) {
-  const requestURL = `${API_BASE}/gallery/top/viral/1`;
+export function* getImages({ payload }) {
+  const { section, sort, window, isViral } = payload;
+
+  const requestURL = `${API_BASE}/gallery/${section}/${sort}/${window}/1?showViral=${isViral}`;
 
   try {
     const images = yield call(request, requestURL);

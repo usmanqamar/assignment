@@ -4,9 +4,10 @@ import {
   FETCH_IMAGES_SUCCESS,
 } from './constants';
 
-export function loadImages() {
+export function loadImages(payload) {
   return {
     type: FETCH_IMAGES,
+    payload,
   };
 }
 

@@ -12,6 +12,8 @@ import styled from 'styled-components';
 import { Switch, Route } from 'react-router-dom';
 
 import Home from 'containers/Home/Loadable';
+import Detail from 'containers/Detail/Loadable';
+
 import Header from 'components/Header';
 import GlobalStyle from '../../global-styles';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -38,7 +40,8 @@ export default function App() {
       <Header />
       <Content>
         <Switch>
-          <Route path="/home" component={Home} />
+          <Route path="/" exact component={Home} />
+          <Route path="/home/:id" exact component={Detail} />
         </Switch>
       </Content>
       <GlobalStyle />

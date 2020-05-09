@@ -1,4 +1,4 @@
-export const getThumbanilPath = (image, size = 'm') => {
+export const getThumbnailPath = (image, size = 'm') => {
   const { type } = image;
   let { link: url, gifv } = image;
   if (type === 'image/gif') {

@@ -9,7 +9,7 @@ const Header = () => (
       <img alt="" width="140px" height="48px" src={logo} />
     </Navbar.Brand>
     <Nav className="mr-auto">
-      <Nav.Link href="/home">Home</Nav.Link>
+      <Nav.Link href="/">Home</Nav.Link>
     </Nav>
   </Navbar>
 );
