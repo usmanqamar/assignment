@@ -1,0 +1,54 @@
+{
+  "name": "Assignment",
+  "version": "1.0.0",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "babel-jest": "^25.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "prettier": "^1.19.1"
+  },
+  "dependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/node": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "app-root-path": "^3.0.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.0",
+    "cuid": "^2.1.8",
+    "eslint-plugin-graphql": "^3.1.1",
+    "express": "^4.17.1",
+    "lint-staged": "^10.0.8",
+    "lodash": "^4.17.10",
+    "mongoose": "^5.9.1",
+    "nodemailer-promise": "^2.0.0",
+    "nodemon": "^2.0.2",
+    "pre-commit": "^1.2.2",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.5",
+    "supertest": "^4.0.2"
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint:fix",
+      "git add --force"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add --force"
+    ]
+  },
+  "pre-commit": "lint:staged",
+  "scripts": {
+    "start": "cross-env NODE_ENV=development nodemon --exec babel-node ./src/index.js",
+    "lint": "eslint --ext .js ./src",
+    "lint:fix": "eslint --ext .js ./src --fix",
+    "build": "babel src --out-dir dist",
+    "lint:staged": "lint-staged"
+  }
+}

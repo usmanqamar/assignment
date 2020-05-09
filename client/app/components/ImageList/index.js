@@ -15,7 +15,7 @@ const ImageList = ({ images }) => (
       </Col>
     ) : (
       images.map(image => (
-        <Col md={6} sm={12} lg={4} className="pb-4">
+        <Col key={image.id} md={6} sm={12} lg={4} className="pb-4">
           <Card style={{ width: 'auto' }} className="m-auto">
             <Card.Body>
               <Card.Text>{image.title}</Card.Text>
