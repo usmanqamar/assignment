@@ -16,13 +16,13 @@ const ImageList = ({ images }) => (
     ) : (
       images.map(image => (
         <Col md={6} sm={12} lg={4} className="pb-4">
-          <Card style={{ width: '320px' }} className="m-auto">
+          <Card style={{ width: 'auto' }} className="m-auto">
             <Card.Body>
               <Card.Text>{image.title}</Card.Text>
             </Card.Body>
             <Link to={`/home/${image.id}`}>
               <img
-                className="m-auto"
+                className="m-auto d-block"
                 alt={image.title}
                 src={getThumbnailPath(image)}
               />

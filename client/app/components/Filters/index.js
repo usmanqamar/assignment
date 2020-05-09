@@ -9,7 +9,7 @@ import Toggle from 'react-toggle';
 const Filters = ({ filter, onFilterChange }) => (
   <>
     <Row className="justify-content-between mb-4 ">
-      <Col>
+      <Col sm={12} md={6} lg={4} >
         <Nav
           className="mb-2"
           variant="pills"
@@ -28,7 +28,7 @@ const Filters = ({ filter, onFilterChange }) => (
           </Nav.Item>
         </Nav>
       </Col>
-      <Col>
+      <Col sm={12} md={6} lg={4} >
         <Form.Control
           as="select"
           onChange={ev => onFilterChange(ev.target.value, 'sort')}
@@ -39,7 +39,7 @@ const Filters = ({ filter, onFilterChange }) => (
           <option value="rising">Rising</option>
         </Form.Control>
       </Col>
-      <Col className="mr-5 text-right">
+      <Col className="text-lg-right mt-2" sm={12} md={6} lg={4} >
         {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
         <label className="mr-2">Include Viral</label>
         <Toggle
