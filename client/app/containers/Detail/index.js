@@ -96,13 +96,13 @@ export function Detail({ image, match: { params }, loading, fetchImage }) {
 
 Detail.propTypes = {
   fetchImage: PropTypes.func.isRequired,
-  image: PropTypes.array.isRequired,
+  image: PropTypes.object.isRequired,
   loading: PropTypes.bool,
   match: PropTypes.object.isRequired,
 };
 
 GetVideo.propTypes = {
-  image: PropTypes.array.isRequired,
+  image: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = createStructuredSelector({
